@@ -1,0 +1,28 @@
+@startuml
+
+abstract class TaskVieModel
+abstract TaskListFragment
+abstract TaskAdapter
+abstract ViewHolder
+abstract MainActivity
+abstract AddTaskDialogFragment
+abstract Database
+abstract taskEntity
+
+
+interface TaskDAO
+interface DeleteTaskListner
+
+AddTaskDialogFragment <|-- MainActivity
+TaskListFragment <|-- MainActivity
+TaskListFragment <|-- taskAdapter
+TaskListFragment --|> taskAdapter
+TaskAdapter <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+@enduml
